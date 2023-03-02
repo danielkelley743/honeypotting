@@ -14,7 +14,7 @@ SERVICES=http:$HTTP_PORT,ftp:$FTP_PORT
 BIND_PORTS="-p $HTTP_PORT:$HTTP_PORT  -p $FTP_PORT:$FTP_PORT"
 
 # Setup excluded actions. must include escaped double qoutes and separated by commas
-EXCLUDED_ACTIONS=\"get\",\"post\",\"something\"
+EXCLUDED_ACTIONS=\"get\",\"post\",\"process\"
 
 # run the image
-docker run -e URL=$1 -e SERVICES=$SERVICES -e EXCLUDED_ACTIONS=$EXCLUDED_ACTIONS $BIND_PORTS -it autorunnner00/my-images:start_all-1.0.0
+docker run -e URL=$1 -e SERVICES=$SERVICES -e EXCLUDED_ACTIONS=$EXCLUDED_ACTIONS $BIND_PORTS -it autorunnner00/my-images:honeypots-latest
